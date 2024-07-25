@@ -12,10 +12,12 @@ Based on:
 import codecs
 from glob import glob
 from os.path import abspath, basename, dirname, join, splitext
+from distutils.core import setup, Extension
 
 # Third-Party Libraries
 from setuptools import find_packages, setup
 
+import numpy
 
 def readme():
     """Read in and return the contents of the project's README.md file."""
@@ -190,6 +192,10 @@ setup(
             "pytest",
         ]
     },
+    ext_modules=[
+        Extension("pe_reports", ["pe_reports.c"],
+                  include_dirs=[numpy.get_include()]),
+    ],
     # Conveniently allows one to run the CLI tool as `pe-reports` or 'pe-mailer'
     entry_points={
         "console_scripts": [
