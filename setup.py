@@ -141,7 +141,7 @@ setup(
         "matplotlib == 3.3.4",
         "nested-lookup == 0.2.25",
         "nltk == 3.8.1",
-        "numpy == 1.18.5", 
+        "numpy == 1.21.6", 
         "openpyxl == 3.1.2",
         "pandas == 1.1.5",
         "pdfkit ==  1.0.0",
